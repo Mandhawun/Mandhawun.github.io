@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Smile Website | Praroz Tutorial</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1 class="logo">PRAROZ</h1>
+            <Ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </Ul>
+            <button type="button" onclick="toggledark()" id="darken"><span></span></button>
+        </nav>
+
+        <div class="title">
+            <h1>WELCOME EVERYONE</h1>
+        </div>
+        <div class="button">
+            <a href="#" class="btn">WATCH VIDEOS</a>
+            <a href="#" class="btn">LEARN MORE</a>
+        </div>
+    </div>
+    <script>
+       var darken = document.getElementById("darken");
+       if(localStorage.getItem("theme") == null){
+        localStorage.getItem("theme","light");
+       }
+
+       localStorage.getItem("theme", "light");
+
+       let localdata = localStorage.getItem("theme");
+       if(localdata == "light"){
+        document.body.classList.remove("darks");
+       }
+       else if(localdata == "dark"){
+        darken.classList.toggle("active");
+        document.body.classList.add("darks");
+       }
+
+       darken.onclick = function toggledark(){
+        document.body.classList.toggle("darks");
+       
+       if(document.body.classList.contains("darks")){
+        darken.classList.toggle("active");
+        localStorage.setItem("theme","dark")
+       }
+       else{
+        darken.classList.toggle("active");
+        localStorage.setItem("theme","light");
+       }
+    }
+    </script>
+</body>
+</html>
