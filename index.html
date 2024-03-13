@@ -2,63 +2,191 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Mode Smile Website | Praroz Tutorial</title>
-
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <h1 class="logo">PRAROZ</h1>
-            <Ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="#">CONTACT</a></li>
-            </Ul>
-            <button type="button" onclick="toggledark()" id="darken"><span></span></button>
-        </nav>
-
-        <div class="title">
-            <h1>WELCOME EVERYONE</h1>
+    <nav id="desktop-nav">
+        <div class="logo">John Deo</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-        <div class="button">
-            <a href="#" class="btn">WATCH VIDEOS</a>
-            <a href="#" class="btn">LEARN MORE</a>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">John Deo</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
         </div>
-    </div>
-    <script>
-       var darken = document.getElementById("darken");
-       if(localStorage.getItem("theme") == null){
-        localStorage.getItem("theme","light");
-       }
+    </nav>
+    <section id="profile">
+        <div class="section_pic-container">
+            <img src="./Assets/profile-pic.png" alt="John Deo profile picture">
+        </div>
+        <div class="section_text">
+            <p class="section_text_p1">Hello, I'm</p>
+            <h1 class="title">John Doe</h1>
+            <p class="section_text_p2">Frontend Developer</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./Assets/resume-resume-example.pdf')">
+                    Download CV
+                </button>
+                <button class="btn btn-color-1" onclick="location.href='#contact'">
+                    Contact Info
+                </button>
+            </div>
+            <div id="socials-container">
+                <img src="./Assets/linkedin.png" alt="My linkedin profile" class="icon" 
+                onclick="location.href='https://linkedin.com/'">
+                <img src="./Assets/github.png" alt="My Github profile" class="icon" 
+                onclick="location.href='https://github.com/'">
+            </div>
+        </div>
+    </section>
+    <section id="About">
+        <p class="section_text_p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class="section_pic-container">
+                <img src="./Assets/about-pic.png" alt="profile picture"
+                class="about-pic"/>
+            </div>
+            <div class="about-details-container">
+                <div class="about-container">
+                    <div class="details-container">
+                        <img src="./Assets/experience.png" alt="Experience icon"
+                        class="icon"/>
+                        <h3>Experience</h3>
+                        <p>2+ years <br>Frontend Development</p>
+                    </div>
+                    <div class="details-container">
+                        <img src="./Assets/education.png" alt="education icon"
+                        class="icon"/>
+                        <h3>Education</h3>
+                        <p>B.Sc.In Applied ICT<br>Certificate in graphics</p>
+                    </div>
+                </div>
+                <div class="text-conatainer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Doloremque libero aut repudiandae nostrum voluptatem distinctio cupiditate excepturi. 
+                    Beatae provident, veniam quo odio ducimus dolores fugit aperiam, ut quasi impedit adipisci 
+                    voluptas quidem suscipit ipsam asperiores. Laudantium, inventore optio fugit deleniti, 
+                    ad corrupti numquam non ex, praesentium saepe qui! Possimus, eligendi.</p>
+                </div>
+            </div>
+        </div>
+        <img src="./Assets/arrow.png" alt="Arrow icon"  class="icon arrow" onclick="location.href='./#experience'"/>
+    </section>
+    <section id="experience">
+        <p class="section_text_p1">Explore My</p>
+        <h1 class="title">Experience</h1>
+        <div class="experience-details-container">
+            <div class="about-container">
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Frontend Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./Assets/checkmark.png" alt="Experience-icon" class="icon"/>
+                            <div>
+                                <h3>HTML</h3>
+                                <P>Experienced</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./Assets/checkmark.png" alt="Experience-icon" class="icon"/>
+                            <div>
+                                <h3>CSS</h3>
+                                <P>Experienced</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./Assets/checkmark.png" alt="Experience-icon" class="icon"/>
+                            <div>
+                                <h3>SASS</h3>
+                                <P>Intermediate</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./Assets/checkmark.png" alt="Experience-icon" class="icon"/>
+                            <div>
+                                <h3>JavaScript</h3>
+                                <P>Basic</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./Assets/checkmark.png" alt="Experience-icon" class="icon"/>
+                            <div>
+                                <h3>Typescript</h3>
+                                <P>Basic</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./Assets/checkmark.png" alt="Experience-icon" class="icon"/>
+                            <div>
+                                <h3>Material UI</h3>
+                                <P>Intermediate</P>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Backend Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./Assets/checkmark.png" alt="Experience-icon" class="icon"/>
+                            <div>
+                                <h3>PostgreSQL</h3>
+                                <P>Basic</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./Assets/checkmark.png" alt="Experience-icon" class="icon"/>
+                            <div>
+                                <h3>Node Js</h3>
+                                <P>Basic</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./Assets/checkmark.png" alt="Experience-icon" class="icon"/>
+                            <div>
+                                <h3>Express JS</h3>
+                                <P>Basic</P>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./Assets/checkmark.png" alt="Experience-icon" class="icon"/>
+                            <div>
+                                <h3>Github</h3>
+                                <P>Basic</P>
+                            </div>
+                        </article>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./Assets/arrow.png" alt="Arrow icon"  class="icon arrow"
+        onclick="location.href='./#experience'"/>
+    </section>
+    <section id="Projects">
 
-       localStorage.getItem("theme", "light");
-
-       let localdata = localStorage.getItem("theme");
-       if(localdata == "light"){
-        document.body.classList.remove("darks");
-       }
-       else if(localdata == "dark"){
-        darken.classList.toggle("active");
-        document.body.classList.add("darks");
-       }
-
-       darken.onclick = function toggledark(){
-        document.body.classList.toggle("darks");
-       
-       if(document.body.classList.contains("darks")){
-        darken.classList.toggle("active");
-        localStorage.setItem("theme","dark")
-       }
-       else{
-        darken.classList.toggle("active");
-        localStorage.setItem("theme","light");
-       }
-    }
-    </script>
+    </section>
+    <script src="script.js"></script>
 </body>
 </html>
